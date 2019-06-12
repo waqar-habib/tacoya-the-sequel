@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center" id="top-bar">
+			<img src="/assets/images/taco.png" width= "2	50px" alt="taco" />
+			<h1> Tacoya </h1>
+		</div>
+		<div class="col-md-6 text-center" class="task">
+			<div class="row">
+			  {{#each taco_data}}
+			  	{{#unless this.picked_up}}
+				<div class="col-md-9 text-center">
+					<pre>{{this.id}}. {{this.taco_name}}
+					</pre>
+				  		<!-- {{this.Date}} -->
+				</div>
+				<div class="col-md-3 text-center">
+					<form class="picked_up-form button-size">
+						<input input type="hidden" class="taco_id" type="text" value={{this.id}}><br>
+						<button type="submit" class="btn btn-default">Pick it up!</button>
+					</form>
+				</div>
+				{{/unless}}
+			  {{/each}}
+			</div>
+		</div>
+		<div class="col-md-6 text-center" class="task">
+			  {{#each taco_data}}
+			  	{{#if this.picked_up}}
+			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.taco_name}}" readonly>
+				{{/if}}
+			  {{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center enter_section">
+			<form action="/tacos/create" method="POST">
+				<input type="text" class="form-control" name="taco_name" value="" id="enter_text">
+				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+			</form>
+			<p>Enter a taco you want to eat Click the "Submit" button.</p>
+		</div>
+	</div>
+</div>
