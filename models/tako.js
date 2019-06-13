@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-  var Taco = sequelize.define("tacos", {
+  var Tako = sequelize.define("Tako", {
     taco_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      //allowNull: false,
       validate: {
         len: [1]
       }
@@ -12,6 +12,6 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false,
     }
   });
-  
-  return Taco;
+
+  return Tako;
 };

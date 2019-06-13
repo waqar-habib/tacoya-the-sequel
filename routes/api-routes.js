@@ -1,28 +1,30 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  //console.log(db);
     app.get("/", function(req, res) {
-        db.Taco.findAll({
-            
-        }).then(function(data) {
+        db.Tako.findAll().then(function(data) {
             res.render("index", {taco_data: data});
           });
     });
     app.post("/", function(req, res) {
-        db.Taco.create({
-          taco_name: req.body.name
+      //console.log(req.body);
+        db.Tako.create({
+          taco_name: req.body.taco_name
         }).then(function(results) {
           res.redirect("/");
         });    
     });
     app.put("/:id", function(req, res) {
-        db.Taco.update({
-          picked_up:req.body.picked_up
+      console.log(req.params);
+      console.log(req.body);
+        db.Tako.update({
+          picked_up:true
         }, 
         {
             where: {id: req.params.id}
         }).then(function(results) {
-          res.redirect("/");
+          res.json("/");
         });
     });
 
