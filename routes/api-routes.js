@@ -2,7 +2,9 @@ var db = require("../models");
 
 module.exports = function(app) {
     app.get("/", function(req, res) {
-        db.Taco.findAll({}).then(function(data) {
+        db.Taco.findAll({
+            
+        }).then(function(data) {
             res.render("index", {taco_data: data});
           });
     });
@@ -25,4 +27,3 @@ module.exports = function(app) {
     });
 
 }
-
