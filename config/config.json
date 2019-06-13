@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "bootcamp",
+    "database": "tacoya_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "qw48qdo7lxtt9jal",
+    "password": "oneoh7gab32fsfel",
+    "database": "sq3v6a4fqbd0g9ww",
+    "host": "vhw3t8e71xdz9k14.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}
